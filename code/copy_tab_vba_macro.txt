@@ -1,0 +1,50 @@
+Sub copy()
+'
+' copy Macro
+'
+    Dim counter As Integer
+    
+' Reading loop
+    For counter = 1 To 5 Step 1
+    
+        If counter = 1 Then grade = "3"
+        If counter = 2 Then grade = "45"
+        If counter = 3 Then grade = "67"
+        If counter = 4 Then grade = "89"
+        If counter = 5 Then grade = "1012"
+    
+        Sheets("R_2").Select
+        Sheets("R_2").copy Before:=Sheets(1)
+        Sheets("R_2 (2)").Select
+        Sheets("R_2 (2)").Name = "R_" & grade
+    Next counter
+    
+' Listening loop
+    For counter = 4 To 1 Step -1
+    
+        If counter = 1 Then grade2 = "23"
+        If counter = 2 Then grade2 = "45"
+        If counter = 3 Then grade2 = "68"
+        If counter = 4 Then grade2 = "912"
+    
+        Sheets("R_2").Select
+        Sheets("R_2").copy Before:=Sheets(1)
+        Sheets("R_2 (2)").Select
+        Sheets("R_2 (2)").Name = "L_" & grade2
+    Next counter
+    
+' Listening loop
+    For counter = 4 To 1 Step -1
+    
+        If counter = 1 Then grade2 = "23"
+        If counter = 2 Then grade2 = "45"
+        If counter = 3 Then grade2 = "68"
+        If counter = 4 Then grade2 = "912"
+    
+        Sheets("R_2").Select
+        Sheets("R_2").copy Before:=Sheets(1)
+        Sheets("R_2 (2)").Select
+        Sheets("R_2 (2)").Name = "S_" & grade2
+    Next counter
+    
+End Sub
